@@ -1,0 +1,16 @@
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: kyle-s3-bucket-cf-demo
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-088d38b423bff245f
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          SubnetId: subnet-0efaf003d0041de68 
+          GroupSet:
+            - sg-059dc6d1d23a14b6b
